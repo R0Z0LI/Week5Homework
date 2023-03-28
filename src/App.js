@@ -8,14 +8,16 @@ const DUMMY_MOSNTERS = [
   {
     id: "e1",
     name: "Toilet Paper",
-    stregth: 94.12,
+    strength: 94.12,
     defense: 10.02,
+    type: 2,
   },
   {
-    id: "e1",
+    id: "e2",
     name: "Shadow slayer",
-    stregth: 130.02,
+    strength: 130.02,
     defense: 0.001,
+    type: 0,
   },
 ];
 
