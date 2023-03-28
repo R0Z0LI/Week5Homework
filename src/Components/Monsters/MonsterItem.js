@@ -11,16 +11,21 @@ import defense from "../../Icons/defense.svg";
 
 const MonsterItem = (props) => {
   const types = [air, earth, fire, water];
-  console.log(types[props.type]);
   const image = types[props.type];
   return (
-    <li>
-      <h2>{props.name}</h2>
-      <img src={image} alt="elements" className="icon" />
-      <div>
-        <h2>{props.strength}</h2>
+    <li className="monster__list">
+      <img src={image} alt="elements" className="type" />
+      <div className="monster">
+        <p className="monster__name">{props.name}</p>
         <div>
-          <h2>{props.defense}</h2>
+          <div className="monster__attributes">
+            <img src={strength} alt="elements" className="icon" />
+            <span>{props.strength}</span>
+          </div>
+          <div className="monster__attributes">
+            <img src={defense} alt="elements" className="icon" />
+            <span>{props.defense}</span>
+          </div>
         </div>
       </div>
     </li>
