@@ -1,4 +1,11 @@
 .App-header {
   width: 7rem;
   height: 7rem;
+  padding-bottom: 2rem;
+}
+.App {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

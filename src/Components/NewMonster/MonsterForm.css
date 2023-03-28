@@ -1,0 +1,31 @@
+.new-monster {
+  width: 20rem;
+  text-align: center;
+  padding: 1rem;
+  border: 2px solid black;
+}
+
+.new-monster__arrow-button {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  padding: 0.5rem;
+}
+.new-monster__elements {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  padding: 0rem 1rem 0rem 1rem;
+}
+.new-monster__name {
+}
+
+.new-monster__attributes {
+  width: 3rem;
+  margin: 1rem 1rem 1rem 0.2rem;
+}
+
+.new-monster__attribute-icons {
+  width: 1rem;
+  height: 1rem;
+}
