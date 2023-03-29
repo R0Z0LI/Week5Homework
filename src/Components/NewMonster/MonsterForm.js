@@ -19,14 +19,28 @@ const MonsterForm = (props) => {
 
   const [typesArrow, setTypesArrow] = useState(types[typesID]);
 
+  const [attackError, setAttackError] = useState("");
+  const [defenseError, setDefenseError] = useState("");
+
   const nameChangedHandler = (event) => {
     setEnteredName(event.target.value);
   };
   const strengthChangedHandler = (event) => {
-    setEnteredStregth(event.target.value);
+    if (event.target.value < 1) {
+      setAttackError("Only accept number above 0");
+    } else {
+      setAttackError("");
+      setEnteredStregth(event.target.value);
+    }
   };
   const defenseChangedHandler = (event) => {
-    setEnteredDefense(event.target.value);
+    if (event.target.value < 1) {
+      setDefenseError("Only accept number above 0");
+    } else {
+      setDefenseError("");
+
+      setEnteredDefense(event.target.value);
+    }
   };
   const leftArrowPushedHandler = (event) => {
     console.log(event.targer);
@@ -82,6 +96,7 @@ const MonsterForm = (props) => {
             className="new-monster__name"
             placeholder="Name"
             value={enteredName}
+            required
             onChange={nameChangedHandler}
           />
           <div>
@@ -94,8 +109,10 @@ const MonsterForm = (props) => {
               type="number"
               className="new-monster__attributes"
               value={enteredStregth}
+              required
               onChange={strengthChangedHandler}
             />
+            {attackError && <p className="error">{attackError}</p>}
             <img
               src={defense}
               alt="defense"
@@ -105,8 +122,10 @@ const MonsterForm = (props) => {
               type="number"
               className="new-monster__attributes"
               value={enteredDefense}
+              required
               onChange={defenseChangedHandler}
             />
+            {defenseError && <p className="error">{defenseError}</p>}
           </div>
           <input type="submit" />
         </div>

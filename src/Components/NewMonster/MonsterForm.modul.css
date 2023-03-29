@@ -17,8 +17,6 @@
   display: inline-block;
   padding: 0rem 1rem 0rem 1rem;
 }
-.new-monster__name {
-}
 
 .new-monster__attributes {
   width: 3rem;
@@ -28,4 +26,9 @@
 .new-monster__attribute-icons {
   width: 1rem;
   height: 1rem;
+}
+.error {
+  font-size: 0.75rem;
+  margin: 0;
+  color: red;
 }
