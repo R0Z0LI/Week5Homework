@@ -1,8 +1,8 @@
 import logo from "./Icons/logo.svg";
 import "./App.css";
-import NewMonster from "./Components/NewMonster/NewMonster";
+import NewMonster from "./components/newMonster/NewMonster";
 import React, { useState } from "react";
-import Monsters from "./Components/Monsters/Monsters";
+import Monsters from "./components/monsters/Monsters";
 
 const DUMMY_MOSNTERS = [
   {
@@ -24,8 +24,20 @@ const DUMMY_MOSNTERS = [
 function App() {
   const [monsters, setMonsters] = useState(DUMMY_MOSNTERS);
   const addMonsterHandler = (monster) => {
-    setMonsters((prevMonser) => {
+    setMonsters((prevMonster) => {
       return [monster, ...monsters];
+    });
+  };
+
+  const onDeleteMonsterDataHandler = (id) => {
+    let index = -1;
+    for (let i = 0; i < monsters.length; i++) {
+      if (monsters[i].id === id) {
+        index = i;
+      }
+    }
+    setMonsters((prevMonster) => {
+      return prevMonster.filter((_, i) => i !== index);
     });
   };
   return (
@@ -35,7 +47,10 @@ function App() {
       </header>
       <div>
         <NewMonster onAddMonster={addMonsterHandler} />
-        <Monsters items={monsters} />
+        <Monsters
+          items={monsters}
+          onDeleteMonsterData={onDeleteMonsterDataHandler}
+        />
       </div>
     </div>
   );

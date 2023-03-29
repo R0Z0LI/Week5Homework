@@ -1,20 +1,35 @@
-.icon {
+.monster-item__icon {
   width: 1rem;
   height: 1rem;
+  padding: 0rem 0.3rem 0rem 0.3rem;
 }
 .type {
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 1rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  padding: 1rem 1rem 1rem 0rem;
 }
-.monster__attributes {
+.monster-item__attributes {
   display: inline-block;
 }
-.monster__list {
+.monster-item {
+  width: 100%;
+}
+.monster-item__name {
+  padding: 1rem 1rem 1rem 0rem;
+  margin: 0;
+}
+.monster-item__delete {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-self: flex-end;
+  padding: 1.5rem 0rem 1.5rem 0rem;
+}
+.monster-list {
   display: flex;
   flex-direction: row;
-}
-.monster__name {
-  padding: 1rem;
-  margin: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border: 1px solid black;
 }
