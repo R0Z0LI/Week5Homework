@@ -24,6 +24,7 @@ const DUMMY_MOSNTERS = [
 
 function App() {
   const [monsters, setMonsters] = useState(DUMMY_MOSNTERS);
+
   const addMonsterHandler = (monster) => {
     setMonsters((prevMonster) => {
       return [monster, ...monsters];
@@ -40,6 +41,7 @@ function App() {
     setMonsters((prevMonster) => {
       return prevMonster.filter((_, i) => i !== index);
     });
+    console.log(monsters);
   };
   return (
     <div className="App">

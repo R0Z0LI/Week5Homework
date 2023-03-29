@@ -1,7 +1,7 @@
 import { type } from "@testing-library/user-event/dist/type";
 import React from "react";
 import MonsterItem from "./MonsterItem";
-import "./MonstersList.css";
+import "./MonstersList.modul.css";
 
 const MonsterList = (props) => {
   const onDeleteMonsterDataHandler = (id) => {

@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 
-import "./MonsterItem.css";
+import "./MonsterItem.modul.css";
 
 import strength from "../../Icons/attack.svg";
 import defense from "../../Icons/defense.svg";
 import trash from "../../Icons/trash-can.svg";
 
 const MonsterItem = (props) => {
-  //const types = [air, earth, fire, water];
   const image = props.type;
 
   const onClickHandler = () => {

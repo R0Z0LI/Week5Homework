@@ -7,7 +7,7 @@ import fire from "../../Icons/fire.svg";
 import water from "../../Icons/water.svg";
 import strength from "../../Icons/attack.svg";
 import defense from "../../Icons/defense.svg";
-import "./MonsterForm.css";
+import "./MonsterForm.modul.css";
 
 let typesID = 0;
 const MonsterForm = (props) => {

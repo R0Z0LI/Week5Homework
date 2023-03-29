@@ -3,26 +3,26 @@ import MonstersFilter from "./MonstersFilter";
 import MonsterList from "./MonstersList";
 
 const Monsters = (props) => {
-  const [filteredNameList, setFilteredNameList] = useState(props.items);
+  const [filteredName, setFilteredName] = useState("");
 
   const onDeleteMonsterHandler = (id) => {
     props.onDeleteMonsterData(id);
   };
 
   const filteredNameHandler = (typedName) => {
-    let filteredList = [...props.items];
-    filteredList = filteredList.filter((monster) => {
-      return monster.name.toLowerCase().indexOf(typedName.toLowerCase()) !== -1;
-    });
-    setFilteredNameList(filteredList);
-    console.log(filteredList);
+    setFilteredName(typedName);
   };
 
+  const filteredList = props.items.filter((monster) => {
+    return (
+      monster.name.toLowerCase().indexOf(filteredName.toLowerCase()) !== -1
+    );
+  });
   return (
     <div>
-      <MonstersFilter items={props.items} typed={filteredNameHandler} />
+      <MonstersFilter items={filteredName} typed={filteredNameHandler} />
       <MonsterList
-        items={filteredNameList}
+        items={filteredList}
         onDeleteMonster={onDeleteMonsterHandler}
       />
     </div>
