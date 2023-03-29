@@ -2,17 +2,13 @@ import React, { useState } from "react";
 
 import "./MonsterItem.css";
 
-import air from "../../Icons/air.svg";
-import earth from "../../Icons/earth.svg";
-import fire from "../../Icons/fire.svg";
-import water from "../../Icons/water.svg";
 import strength from "../../Icons/attack.svg";
 import defense from "../../Icons/defense.svg";
 import trash from "../../Icons/trash-can.svg";
 
 const MonsterItem = (props) => {
-  const types = [air, earth, fire, water];
-  const image = types[props.type];
+  //const types = [air, earth, fire, water];
+  const image = props.type;
 
   const onClickHandler = () => {
     props.onDeleteMonsterItem(props.id);

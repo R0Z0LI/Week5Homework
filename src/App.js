@@ -3,21 +3,22 @@ import "./App.css";
 import NewMonster from "./components/newMonster/NewMonster";
 import React, { useState } from "react";
 import Monsters from "./components/monsters/Monsters";
-
+import air from "./Icons/air.svg";
+import fire from "./Icons/fire.svg";
 const DUMMY_MOSNTERS = [
   {
     id: "e1",
     name: "Toilet Paper",
     strength: 94.12,
     defense: 10.02,
-    type: 2,
+    type: air,
   },
   {
     id: "e2",
     name: "Shadow slayer",
     strength: 130.02,
     defense: 0.001,
-    type: 0,
+    type: fire,
   },
 ];
 

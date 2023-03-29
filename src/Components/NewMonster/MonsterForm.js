@@ -51,7 +51,7 @@ const MonsterForm = (props) => {
       name: enteredName,
       strength: enteredStregth,
       defense: enteredDefense,
-      type: typesID,
+      type: typesArrow,
     };
     props.onSaveMonsterData(monsterData);
   };
