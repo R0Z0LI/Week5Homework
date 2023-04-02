@@ -5,29 +5,19 @@ import React, { useState } from "react";
 import Monsters from "./components/monsters/Monsters";
 import air from "./Icons/air.svg";
 import fire from "./Icons/fire.svg";
-const DUMMY_MOSNTERS = [
-  {
-    id: "e1",
-    name: "Toilet Paper",
-    strength: 94.12,
-    defense: 10.02,
-    type: air,
-  },
-  {
-    id: "e2",
-    name: "Shadow slayer",
-    strength: 130.02,
-    defense: 0.001,
-    type: fire,
-  },
-];
 
 function App() {
-  const [monsters, setMonsters] = useState(DUMMY_MOSNTERS);
-
+  //localStorage.clear();
+  const [monsters, setMonsters] = useState(() => {
+    let loadMonsters = localStorage.getItem("newMonster");
+    const initialValue = JSON.parse(loadMonsters);
+    return initialValue || [];
+  });
   const addMonsterHandler = (monster) => {
     setMonsters((prevMonster) => {
-      return [monster, ...monsters];
+      let addedMonster = [monster, ...monsters];
+      localStorage.setItem("newMonster", JSON.stringify(addedMonster));
+      return addedMonster;
     });
   };
 
@@ -38,10 +28,20 @@ function App() {
         index = i;
       }
     }
+    var list = JSON.parse(localStorage.getItem("newMonster"));
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].id === id) {
+        console.log(list[i]);
+        list.splice(i, 1);
+      }
+    }
+    list = JSON.stringify(list);
+    console.log(list);
+    localStorage.setItem("newMonster", list);
+
     setMonsters((prevMonster) => {
       return prevMonster.filter((_, i) => i !== index);
     });
-    console.log(monsters);
   };
   return (
     <div className="App">
