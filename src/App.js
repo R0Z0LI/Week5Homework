@@ -49,6 +49,7 @@ function App() {
         <img src={logo} alt="logo" />
       </header>
       <div>
+        <h1 className="title">Monsters</h1>
         <NewMonster onAddMonster={addMonsterHandler} />
         <Monsters
           items={monsters}

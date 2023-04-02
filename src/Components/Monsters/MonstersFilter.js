@@ -1,11 +1,20 @@
 import React from "react";
+import "./MonstersFilter.modul.css";
 
 const MonstersFilter = (props) => {
   const onChangeHandler = (event) => {
     props.typed(event.target.value);
   };
   return (
-    <input tpye="text" placeholder="Search.." onChange={onChangeHandler} />
+    <div>
+      <h3>Monsters</h3>
+      <input
+        tpye="text"
+        placeholder="Search.."
+        className="searchBar"
+        onChange={onChangeHandler}
+      />
+    </div>
   );
 };
 
